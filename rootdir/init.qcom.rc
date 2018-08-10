@@ -35,6 +35,17 @@ on init
 
     symlink /sdcard /storage/sdcard0
 
+    # Support legacy paths
+    symlink /sdcard /storage/sdcard
+
+    # map "real" external storages paths also in same way. backwards compatibility.
+    symlink /storage/sdcard0 /mnt/sdcard0
+    symlink /storage/sdcard1 /mnt/sdcard1
+
+    # By default, primary storage is physical
+    #setprop ro.vold.primary_physical 1
+
+
     mkdir /firmware 0771 system system
 
     # NFC fix
