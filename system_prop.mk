@@ -1,3 +1,11 @@
+# USB
+ADDITIONAL_DEFAULT_PROPERTIES += \
+    ro.secure=0 \
+    ro.adb.secure=0 \
+    ro.vold.primary_physical=1 \
+    persist.service.adb.enable=1 \
+    persist.service.debuggable=1
+
 # IO Scheduler
 PRODUCT_PROPERTY_OVERRIDES += \
     sys.io.scheduler=bfq
